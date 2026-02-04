@@ -1,0 +1,10 @@
+//clonar repositório web
+git clone (link web)
+
+//atualizar repositório WEB
+git add.  //verifica arquivos alterados
+git commit -m "algum comentário" //verifica as alterações nos arquivos
+git push //Envia as alterações para nuvem
+
+//atualizar repositório local
+git pull
