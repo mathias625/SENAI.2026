@@ -1,0 +1,8 @@
+{
+  "name": "-insominia",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js"
+  }
+}
