@@ -65,10 +65,49 @@ const excluir = async (req, res) => {
     }
 };
 
+const cadastrarImagem = async (req, res) => {
+  try {
+    const idPublicacao = parseInt(req.params.id);
+    const arquivo = req.file;
+
+    const pastaFinal = `uploads/publicacoes/${idPublicacao}`;
+    const caminhoFinal = `${pastaFinal}/${arquivo.filename}`;
+
+    if (!fs.existsSync(pastaFinal)) {
+      fs.mkdirSync(pastaFinal, { recursive: true });
+    }
+
+    fs.renameSync(arquivo.path, caminhoFinal);
+
+    const imagem = await prisma.imagem.create({
+      data: {
+        nomeOriginal: arquivo.originalname,
+        nomeArquivo: arquivo.filename,
+        mimeType: arquivo.mimetype,
+        path: caminhoFinal,
+        publicacoesId: idPublicacao,
+      },
+    });
+
+    if (!imagem) {
+      throw new Error("Erro ao salvar imagem no banco de dados");
+    }
+
+    res.json(imagem).status(201).end();
+  } catch (error) {
+    if (req.file && fs.existsSync(req.file.path)) {
+      fs.unlinkSync(req.file.path);
+    }
+    res.json({ error: error.message }).status(500).end();
+  }
+};
+
+
 module.exports = {
     cadastrar,
     listar,
     buscar,
     atualizar,
-    excluir
+    excluir,
+    cadastrarImagem
 }

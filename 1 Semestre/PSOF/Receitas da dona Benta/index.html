@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+    <h1>Receitas da dona Benta</h1>
+    <button onclick="abrirModal()">Adicionar Receita</button>
+</header>
+
+<main>
+</main>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h2>Nova Receita</h2>
+
+        <input placeholder="Nome">
+        <textarea placeholder="Ingredientes"></textarea>
+        <textarea placeholder="Modo de preparo"></textarea>
+        <input placeholder="Imagem URL">
+        <input placeholder="Custo">
+
+        <div class="botoes">
+            <button onclick="fecharModal()">Cancelar</button>
+            <button onclick="salvarModal()">Salvar</button>
+            
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Georgia, serif;
+    background:#f5efe6;
+    color:#3e2c23;
+}
+
+.topo{
+    background:#5c3a2e;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    color:#fff;
+}
+
+.topo button{
+    background:#e6ccb2;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    color:#3e2c23;
+}
+
+.container{
+    padding:30px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#fffaf3;
+    padding:15px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    margin-bottom:8px;
+}
+
+.card p{
+    font-size:0.9rem;
+    margin-top:5px;
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+
+.modal-content{
+    background:#e6ccb2;
+    width:400px;
+    margin:100px auto;
+    padding:20px;
+    border-radius:15px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.modal-content input,
+.modal-content textarea{
+    padding:10px;
+    border:none;
+    border-radius:8px;
+}
+
+.botoes{
+    display:flex;
+    justify-content:flex-end;
+}
